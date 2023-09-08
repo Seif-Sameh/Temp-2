@@ -1,3 +1,10 @@
+/* Start global variables */
+:root{
+    --primary-color--: #00c7fc;
+    --secondary-color--: #1f2021;
+}
+
+/* End global variables */
 /* Start global rules */
 *{
     -webkit-box-sizing: border-box;
@@ -13,6 +20,7 @@ html{
 
 body{
     font-family: "Open Sans", sans-serif;
+    background-color: var(--secondary-color--);
 }
 
 ul{
@@ -45,3 +53,61 @@ ul{
 }
 
 /* End global rules */
+
+/* Start Header */
+.header{
+    background-color: var(--secondary-color--);
+    color: white;
+}
+.header .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid grey;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.header .container img{
+    width: 120px;
+}
+.header .container .menu{
+    display: flex;
+    justify-content: space-between;
+}
+.header .container ul{
+    display: flex;
+    margin-right: 20px;
+}
+.header .container li{
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header .container ul .active{
+    color: var(--primary-color--);
+    position: relative;
+}
+.header .container ul .active::after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    background-color: var(--primary-color--);
+    bottom: 0;
+    left: 0;
+    margin-bottom: -24px;
+}
+
+.header .container .search::before{
+    content: "";
+    border-left: 1px solid white;
+    margin-right: 15px;
+}
+
+/* End Header */
