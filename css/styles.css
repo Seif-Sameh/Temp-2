@@ -56,7 +56,10 @@ ul{
 
 /* Start Header */
 .header{
-    background-color: var(--secondary-color--);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;
     color: white;
 }
 .header .container{
@@ -64,32 +67,47 @@ ul{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid grey;
     font-weight: 600;
     font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0;
-    padding-right: 0;
+    min-height: 98px;
+    position: relative;
 }
+.header .container::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: gray;
+    width: calc(100% - 30px);
+    bottom: 0;
+    left: 15px;
+}
+
 .header .container img{
     width: 120px;
 }
-.header .container .menu{
+.header .container nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    flex: 1;
+    align-items: center;
+}
+@media (max-width: 768px){
+    .header .container nav ul{
+        display: none;
+    }
 }
 .header .container ul{
     display: flex;
     margin-right: 20px;
 }
 .header .container li{
-    margin-left: 10px;
-    margin-right: 10px;
+    display: block;
+    padding: 40px 10px;
     cursor: pointer;
 }
 
-.header .container ul .active{
+.header .container ul .active,
+.header .container ul li:hover{
     color: var(--primary-color--);
     position: relative;
 }
@@ -101,13 +119,51 @@ ul{
     background-color: var(--primary-color--);
     bottom: 0;
     left: 0;
-    margin-bottom: -24px;
+    margin-bottom: -1px;
+    z-index: 100;
 }
 
+.header .container .search:hover{
+    color: var(--primary-color--);
+}
 .header .container .search::before{
     content: "";
     border-left: 1px solid white;
     margin-right: 15px;
+}
+.header .container .search-bar{
+    display: none;
+    margin-right: 15px;
+    margin-top: -2px;
+    border: none;
+    padding-left: 6px;
+    height: 18px;
+    outline: none;
+    font-size: 12px;
+}
+.fa-bars{
+    display: none;
+    font-size: 24px;
+    margin-right: 20px;
+}
+.fa-bars:hover{
+    color: var(--primary-color--);
+}
+@media(max-width: 768px){
+    .fa-bars{
+        display: block;
+    }
+}
+
+/* For responsive menu */
+.header .container .drop-menu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    width: calc(100% - 30px);
+    margin-right: 20px;
 }
 
 /* End Header */
