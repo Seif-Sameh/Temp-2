@@ -42,7 +42,7 @@ prev.addEventListener("click", () => {
     if(currentImage > 0){
         currentImage--;
         console.log(currentImage)
-        updateImage();
+        updateImage("left");
         updateIndicator();
     }
 })
@@ -51,12 +51,14 @@ next.addEventListener("click", () => {
     if(currentImage < landingImages.length -1){
         currentImage++;
         console.log(currentImage)
-        updateImage();
+        updateImage("right");
         updateIndicator();
     }
 })
 
-function updateImage (){
+function updateImage (direction){
+    landingImages.forEach((e)=>{e.classList.remove("w3-animate-left", "w3-animate-right")});
+    landingImages[currentImage].classList.add(`w3-animate-${direction}`);
     landingImages.forEach((e)=>{e.classList.remove("active")})
     landingImages[currentImage].classList.add("active");
 }
