@@ -1,7 +1,8 @@
 /* Start global variables */
 :root{
-    --primary-color--: #00c7fc;
-    --secondary-color--: #1f2021;
+    --primary-color: #00c7fc;
+    --secondary-color: #1f2021;
+    --section-padding: 50px;
 }
 
 /* End global variables */
@@ -19,9 +20,10 @@ html{
 }
 
 body{
-    font-family: "Open Sans", sans-serif;
-    background-color: var(--secondary-color--);
+    font-family: "Open Sans";
+    background-color: var(--secondary-color);
 }
+
 /* 
 ul{
     list-style: none;
@@ -50,6 +52,52 @@ ul{
     .container{
         width: 1170px;
     }
+}
+.section-title{
+    padding-bottom: var(--section-padding);
+}
+
+.section-title h1{
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.section-title h1::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #333;
+    bottom: -140px;
+    width: 150px;
+}
+.section-title h1::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    bottom: -150px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.section-title p{
+    font-weight: 200;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: gray;
+    max-width: 600px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    line-height: 1.5;
+    padding-top: 30px;
 }
 
 /* End global rules */
@@ -108,7 +156,7 @@ ul{
 
 .header .container ul .active,
 .header .container ul li:hover{
-    color: var(--primary-color--);
+    color: var(--primary-color);
     position: relative;
 }
 .header .container ul .active::after{
@@ -116,14 +164,14 @@ ul{
     width: 100%;
     height: 2px;
     position: absolute;
-    background-color: var(--primary-color--);
+    background-color: var(--primary-color);
     bottom: 0;
     left: 0;
     z-index: 100;
 }
 
 .header .container .search:hover{
-    color: var(--primary-color--);
+    color: var(--primary-color);
 }
 .header .container .search::before{
     content: "";
@@ -146,7 +194,7 @@ ul{
     margin-right: 20px;
 }
 .fa-bars:hover{
-    color: var(--primary-color--);
+    color: var(--primary-color);
 }
 @media(max-width: 768px){
     .fa-bars{
@@ -156,7 +204,7 @@ ul{
 
 /* For responsive menu */
 .header .container .drop-menu{
-    background-color: var(--secondary-color--);
+    background-color: var(--secondary-color);
 
     display: flex;
     flex-direction: column;
@@ -174,10 +222,9 @@ ul{
 /* Start Landing */
 .landing{
     color: white;
-}
-.landing .images{
     position: relative;
 }
+
 
 .landing .images img{
     display: none;
@@ -187,7 +234,6 @@ ul{
     width: 100%;
     background-size: cover;
     height: 100vh;
-    position: absolute;
     z-index: -2;
 }
 .landing .images::after{
@@ -196,7 +242,8 @@ ul{
     height: 100vh;
     background-color: black;
     position: absolute;
-    opacity: 0.3;
+    top: 0;
+    opacity: 0.4;
     z-index: -1;
 }
 
@@ -230,14 +277,19 @@ ul{
     content: "";
     width: 750px;
     height: 100%;
-    background-color: var(--primary-color--);
+    background-color: var(--primary-color);
     z-index: -1;
     position: absolute;
     top: 0;
     left: -120px;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 @media (max-width: 769px){
+    .landing .container .text-content{
+
+        padding-left: 30px;
+        padding-right: 40px;
+    }    
     .landing .container .text-content::before{
         left: -15px;
         max-width: 100%;
@@ -256,6 +308,7 @@ ul{
     font-weight: 500;
     font-size: 30px;
     margin: 0;
+    line-height: 1.5;
 }
 
 .landing ul {
@@ -274,8 +327,55 @@ ul{
     margin: 10px;
 }
 .landing ul .active{
-    background-color: var(--primary-color--);
-    border-color: var(--primary-color--);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 /* End Landing */
+
+/* Start Services */
+.services-section{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: white;
+}
+.services-section .services{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    row-gap: 50px;
+}
+
+.services-section .services .serv{
+    display: flex;
+}
+.services-section .services .serv i{
+    font-size: 50px;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: var(--secondary-color);
+}
+.services-section .services .serv h3{
+    color: var(--primary-color);
+}
+.services-section .services .serv p{
+    color: gray;
+}
+
+@media (max-width: 992px){
+    .services-section .services{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        row-gap: 50px;
+    }
+    .services-section .services .serv{
+        flex-direction: column;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .services-section .services .serv i{
+        margin-bottom: 20px;
+    }
+}
+/* End Services */
