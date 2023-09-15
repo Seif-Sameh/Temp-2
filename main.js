@@ -34,10 +34,8 @@ let landingImages = Array.from(document.querySelectorAll(".landing .images img")
 let prev = document.querySelector(".prev");
 let next = document.querySelector(".next");
 let indicators = Array.from(document.querySelectorAll(".indicators li"));
-
 updateImage();
 updateIndicator();
-
 prev.addEventListener("click", () => {
     if(currentImage > 0){
         currentImage--;
@@ -55,15 +53,45 @@ next.addEventListener("click", () => {
         updateIndicator();
     }
 })
-
 function updateImage (direction){
     landingImages.forEach((e)=>{e.classList.remove("w3-animate-left", "w3-animate-right")});
     landingImages[currentImage].classList.add(`w3-animate-${direction}`);
     landingImages.forEach((e)=>{e.classList.remove("active")})
     landingImages[currentImage].classList.add("active");
 }
-
 function updateIndicator(){
     indicators.forEach((e)=>{e.classList.remove("active")})
     indicators[currentImage].classList.add("active");
 }
+
+//Portfolio filter
+let filterSelection = document.querySelectorAll(".portfolio-section .filters ul li");
+filterSelection.forEach((e) => {
+    e.addEventListener("click", ()=>{
+        filterSelection.forEach((e)=>{e.classList.remove("active")})
+        e.classList.add("active");
+    })
+})
+
+//Skills rendering
+let skills = document.querySelectorAll(".skill-percent");
+let skillsArray = [95, 90, 74, 87];
+let count = 0;
+skills.forEach((e)=>{
+    e.style.width = `${skillsArray[count]}%`;
+    count++; 
+})
+
+//Skill onHover
+let skillsHover = document.querySelectorAll(".skill");
+skillsHover.forEach((e) => {
+    e.addEventListener("mouseenter", ()=>{
+        let percent = e.querySelector(".skill-percent").style.width;
+        e.querySelector("span").style.setProperty('left', `calc(${percent} - 23px`);
+        e.querySelector("span").innerText = percent
+        e.querySelector("span").style.display = "block"
+    })
+    e.addEventListener("mouseleave", ()=>{
+        e.querySelector("span").style.display = "none"
+    })
+})
