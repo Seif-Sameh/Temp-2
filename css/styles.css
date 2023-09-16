@@ -22,6 +22,7 @@ html {
 body {
     font-family: "Open Sans", sans-serif;
     background-color: var(--secondary-color);
+    overflow-x: hidden;
 }
 
 
