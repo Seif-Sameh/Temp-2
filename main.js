@@ -41,7 +41,6 @@ updateIndicator();
 prev.addEventListener("click", () => {
     if(currentImage > 0){
         currentImage--;
-        console.log(currentImage)
         updateImage("left");
         updateIndicator();
     }
@@ -50,7 +49,6 @@ prev.addEventListener("click", () => {
 next.addEventListener("click", () => {
     if(currentImage < landingImages.length -1){
         currentImage++;
-        console.log(currentImage)
         updateImage("right");
         updateIndicator();
     }
