@@ -429,7 +429,7 @@ ul {
     display: flex;
     align-items: center;
     height: 500px;
-    background-image: url(images/210912.webp);
+    background-image: url("../images/210912.webp");
     background-size: cover;
     z-index: -3;
     overflow: hidden;
@@ -662,7 +662,7 @@ ul {
 /* Start Stats*/
 .stats {
     background-color: var(--secondary-color);
-    background-image: url(images/pngtree-vector-crystal-purple-background-picture-image_1394349.jpg);
+    background-image: url("../images/pngtree-vector-crystal-purple-background-picture-image_1394349.jpg");
     background-size: cover;
     position: relative;
     padding-top: var(--section-padding);
@@ -882,7 +882,7 @@ ul {
 /* Start Qoute*/
 .quote {
     background-color: var(--secondary-color);
-    background-image: url(/images/texture-dark-background-purple-1920x1080-3086.jpg);
+    background-image: url("../images/texture-dark-background-purple-1920x1080-3086.jpg");
     background-size: cover;
     position: relative;
     padding-top: var(--section-padding);
@@ -1035,7 +1035,7 @@ ul {
     padding-top: calc(var(--section-padding)*2);
     padding-bottom: calc(var(--section-padding)*2);
     background-color: var(--secondary-color);
-    background-image: url(images/dark-black-white-pattern.jpg);
+    background-image: url("../images/dark-black-white-pattern.jpg");
     position: relative;
     color: white;
 }
@@ -1222,7 +1222,7 @@ ul {
     padding-bottom: var(--section-padding);
     color: white;
     text-align: center;
-    background-image: url(images/bj9tEn.webp);
+    background-image: url("../images/bj9tEn.webp");
     background-size: cover;
 }
 
