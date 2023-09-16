@@ -99,16 +99,3 @@ skillsHover.forEach((e) => {
 //Submit button
 let submitBtn = document.querySelector(".submit");
 submitBtn.addEventListener("click", (e)=>{e.preventDefault();})
-
-//Buy buttons
-// let buyBtns = document.querySelectorAll(".buy-button");
-// buyBtns.forEach((e)=>{
-//     e.addEventListener("click", ()=>{
-//         e.style.setProperty('background-color', '#00c7fc');
-//         e.style.setProperty('color', 'white');
-//     })
-//     e.addEventListener("mouseup", ()=>{
-//         e.style.setProperty('background-color', 'white');
-//         e.style.setProperty('color', 'black');
-//     })
-// })
