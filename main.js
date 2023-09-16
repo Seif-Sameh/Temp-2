@@ -19,7 +19,6 @@ headerMenu.forEach((e) => {
         })
         e.classList.add("active");
         document.querySelector(".header .container ul").classList.remove("drop-menu");
-        console.log(`.${e.innerHTML.toLowerCase()}-section`);
         let section = `.${e.innerHTML.toLowerCase()}-section`;
         document.querySelector(section).scrollIntoView();
     })
